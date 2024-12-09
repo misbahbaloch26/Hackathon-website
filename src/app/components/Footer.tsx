@@ -1,6 +1,6 @@
 import React from 'react'
-import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa'
-import { IoLocationOutline } from 'react-icons/io5'
+
+
 
 const Footer = () => {
   return (
@@ -81,24 +81,12 @@ const Footer = () => {
     </div>
   </div>
   
-  <div className="bg-gray-100">
-    <div className="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row items-center justify-center">
-      <p className="text-gray-500 text-sm text-center sm:text-left">
-        © 2020 Tailblocks —
-        
-      </p>
-      
-    </div>
-  </div>
+ 
 
 
 </footer>
 
-    </div>  
-    
-
-
-
+    </div>
 
   )
 }

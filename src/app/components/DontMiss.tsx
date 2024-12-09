@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react"
 
 const DontMiss = () => {
   return (
     <div>
          <section className="text-gray-600 body-font">
-      <div className='font-bold h-[17]  container mx-auto flex px-5 mt-9  flex-col'>
-      <h1 className='text-black '>Featured</h1>
+      <div className="font-bold h-[17]  container mx-auto flex px-5 mt-9  flex-col">
+      <h1 className="text-black ">Featured</h1>
       </div>
   <div className=" container mx-auto flex px-5  py-[15px] items-center justify-center flex-col">
     <img

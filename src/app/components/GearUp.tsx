@@ -92,20 +92,11 @@ const GearUp = () => {
           </div>
         </div>
     </div>      
-         
-          
-        
-          
-        
-      
+
     </div>
 
   </div>
-  
-
-
-
-     
+    
   )
 }
 
