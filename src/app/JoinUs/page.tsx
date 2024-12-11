@@ -6,7 +6,7 @@ const JoinUs = () => {
       <section  className="text-gray-600 body-font relative">
         <div className='container px-5 py-24 mx-auto  text-center'>
             <h1 className='font-bold text-center text-black font-sans mb-4'>BECOME A NIKE MEMBER</h1>
-            <p className='mb-3 text-gray-500'>Create your Nike Member profile and get <br /> first access to the very best of Nike <br /> products,
+            <p className='mb-3 text-gray-500'>Create your Nike Member profile and get <br /> first access to the very best of Nike <br /> products
                  inspiration and community.</p>
         <div/>
        
@@ -50,7 +50,7 @@ const JoinUs = () => {
 
               
                 <p className='mt-5'>Sign up for emails to get updates from Nike on products, offers and your Member benefits</p>
-                <p>By creating an account, you agree to Nike's Privacy Policy and Terms of Use.</p>
+                <p>By creating an account, you agree to Nike&apos;s Privacy Policy and Terms of Use.</p>
                 
 
 

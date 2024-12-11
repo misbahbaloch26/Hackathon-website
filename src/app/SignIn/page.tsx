@@ -52,7 +52,7 @@ const SignIn = () => {
           </div>
 
           <div>
-            <p>By logging in, you agree to Nike's <a href="#" className='underline'>privacy policy</a> <br />
+            <p>By logging in, you agree to Nike&apos;s <a href="#" className='underline'>privacy policy</a> <br />
             and<a href="#" className='underline'>Terms and Conditions</a></p>
           </div>
 

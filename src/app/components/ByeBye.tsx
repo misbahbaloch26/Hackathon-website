@@ -76,10 +76,10 @@ const ByeBye = () => {
             <a className="text-black">Kids Shoes</a>
           </li>
           <li>
-            <a className="text-black">Kid's Jorden Shoes</a>
+            <a className="text-black">Kid&apos;s Jorden Shoes</a>
           </li>
           <li>
-            <a className="text-black">Kid's Basketball Shoes</a>
+            <a className="text-black">Kid&apos;s Basketball Shoes</a>
           </li>
         </nav>
       </div>
@@ -93,7 +93,7 @@ const ByeBye = () => {
   <div className="bg-gray-100">
     <div className="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row items-center justify-center">
       <p className="text-gray-500 text-sm text-center sm:text-left">
-        © 2020 Misbah's Ecommerce Store —
+        © 2020 Misbah&apos;s Ecommerce Store —
         
       </p>
       

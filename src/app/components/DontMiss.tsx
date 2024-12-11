@@ -1,3 +1,4 @@
+import Image from "next/image"
 import React from "react"
 
 const DontMiss = () => {
@@ -8,10 +9,11 @@ const DontMiss = () => {
       <h1 className="text-black ">Featured</h1>
       </div>
   <div className=" container mx-auto flex px-5  py-[15px] items-center justify-center flex-col">
-    <img
+    <Image
       className=" object-cover object-center rounded"
       alt="hero"
       src="Image (9).png"
+      width={1344}
     />
     <div className="text-center lg:w-2/3 w-full">
       <h1 className="title-font sm:text-4xl mt-7 text-3xl mb-4 font-medium text-gray-900">

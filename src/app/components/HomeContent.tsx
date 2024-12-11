@@ -2,6 +2,7 @@ import React from 'react'
 import { HiOutlineArrowSmLeft, HiOutlineArrowSmRight } from 'react-icons/hi'
 import HelloNike from './HelloNike'
 import Feature from './Feature'
+import Image from 'next/image'
 
 
 
@@ -15,7 +16,7 @@ const HomeContent = () => {
        <section className="text-gray-600 body-font">
   <div className="container mx-auto flex pt-2 px-4  items-center justify-center flex-col w-full">
     
-<img src="/Image.png" alt="" />    {/*background image*/}
+<Image src="/Image.png" alt=""  width={1344} height={700}/>    {/*background image*/}
 
     <div className="text-center lg:w-2/3 w-full">   {/* */}
       <h1 className="title-font sm:text-4xl text-3xl  pt-5 mb-4 font-medium text-gray-900">
@@ -73,10 +74,12 @@ export const BestProducts = () => {
       
 
         <a className="block relative h-48 rounded overflow-hidden">
-          <img
+          <Image
             alt="ecommerce"
             className="object-cover object-center w-full h-full block"
             src="/Image (1).png"
+            width={1344}
+            height={500}
           />
         </a>
         <div className="mt-4">
@@ -84,7 +87,7 @@ export const BestProducts = () => {
             Nike Air Max Pulse
           </h3>
           <h2 className="text-gray-900 title-font text-lg font-medium">
-            Women Shoe's
+            Women Shoe&apos;s
           </h2>
           <p className="mt-1">$13.995</p>
         </div>
@@ -92,10 +95,12 @@ export const BestProducts = () => {
      
       <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
         <a className="block relative h-48 rounded overflow-hidden">
-          <img
+          <Image
             alt="ecommerce"
             className="object-cover object-center w-full h-full block"
             src="/Image (2).png"
+            width={441}
+            height={500}
           />
         </a>
         <div className="mt-4">
@@ -103,17 +108,19 @@ export const BestProducts = () => {
           Nike Air Max Pulse
           </h3>
           <h2 className="text-gray-900 title-font text-lg font-medium">
-          Men Shoe's
+          Men Shoe&apos;s
           </h2>
           <p className="mt-1">$13.995</p>
         </div>
       </div>
       <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
         <a className="block relative h-48 rounded overflow-hidden">
-          <img
+          <Image
             alt="ecommerce"
             className="object-cover object-center w-full h-full block"
             src="/Image (3).png"
+            width={1344}
+            height={500}
           />
         </a>
         <div className="mt-4">
@@ -121,7 +128,7 @@ export const BestProducts = () => {
           Nike Air Max 97 SE
           </h3>
           <h2 className="text-gray-900 title-font text-lg font-medium">
-            Men's Shoe
+            Men&apos;s Shoe
           </h2>
           <p className="mt-1">$16.995</p>
         </div>

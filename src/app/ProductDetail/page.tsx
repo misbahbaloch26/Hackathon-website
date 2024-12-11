@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 
 import { MdOutlineShoppingCart } from 'react-icons/md'
@@ -9,7 +10,7 @@ const ProductDetail = () => {
   <div className="container px-5 py-24 mx-auto">
 
     <div className="lg:w-4/5 mx-auto flex flex-wrap">
-      <img
+      <Image
         alt="ecommerce"
         className="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded"
         src="/Rectangle (6).png"
@@ -23,7 +24,7 @@ const ProductDetail = () => {
         </h1>
        
         <p className="leading-relaxed mt-5">
-        Turn style on its head with this crafted take on the Air Jordan 1 Mid. Its "inside out"-inspired construction,
+        Turn style on its head with this crafted take on the Air Jordan 1 Mid. Its &quot;inside out&quot;-inspired construction,
          including unique layering and exposed foam accents, ups the ante on this timeless Jordan Brand silhouette.
           Details like the deco stitching on the Swoosh add coveted appeal, while the unexpected shading, rich mixture of 
           materials and aged midsole aesthetic give this release an artisan finish.

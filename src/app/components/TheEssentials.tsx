@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 
 const TheEssentials = () => {
@@ -8,21 +9,22 @@ const TheEssentials = () => {
     <div className="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4  ">
       <div className="p-4 md:w-1/3 sm:mb-0 mb-6">
         <div className=" h-64 overflow-hidden ml-[20]">
-          <img
+          <Image
             alt="content"
             className="object-cover object-center h-full w-full"
             src="/Image (10).png"
-            
+            width={1344}
           />
         </div>
         </div>
         
       <div className="p-4 md:w-1/3 sm:mb-0 mb-6">
         <div className=" h-64 overflow-hidden object-cover">
-          <img
+          <Image
             alt="content"
             className="object-cover object-center h-full w-full"
             src="/Image (11).png"
+            width={1344}
           />
         </div>
        
@@ -30,7 +32,7 @@ const TheEssentials = () => {
       </div>
       <div className="p-4 md:w-1/3 sm:mb-0 mb-6">
         <div className=" h-64 overflow-hidden  object-cover">
-          <img
+          <Image
             alt="content"
             className="object-cover object-center h-full w-full"
             src="/Image (12).png"
