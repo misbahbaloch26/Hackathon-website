@@ -12,8 +12,9 @@ const DontMiss = () => {
     <Image
       className=" object-cover object-center rounded"
       alt="hero"
-      src="Image (9).png"
+      src="/Image (9).png"
       width={1344}
+      height={700}
     />
     <div className="text-center lg:w-2/3 w-full">
       <h1 className="title-font sm:text-4xl mt-7 text-3xl mb-4 font-medium text-gray-900">

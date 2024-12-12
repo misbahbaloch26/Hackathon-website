@@ -14,6 +14,7 @@ const TheEssentials = () => {
             className="object-cover object-center h-full w-full"
             src="/Image (10).png"
             width={1344}
+            height={700}
           />
         </div>
         </div>
@@ -25,6 +26,7 @@ const TheEssentials = () => {
             className="object-cover object-center h-full w-full"
             src="/Image (11).png"
             width={1344}
+            height={700}
           />
         </div>
        
@@ -36,6 +38,8 @@ const TheEssentials = () => {
             alt="content"
             className="object-cover object-center h-full w-full"
             src="/Image (12).png"
+            width={1344}
+            height={700}
             />
          </div>
       </div>

@@ -17,8 +17,9 @@ const GearUp = () => {
             <Image
               alt="ecommerce"
               className="object-contain object-center w-full h-full block "
-              src="Image (5).png"
+              src="/Image (5).png"
               width={1344}
+              height={700}
             />
           </a>
           <div className="mt-4">
@@ -38,8 +39,9 @@ const GearUp = () => {
             <Image
               alt="ecommerce"
               className="object-contain object-center w-full h-full block"
-              src="Image (6).png"
+              src="/Image (6).png"
               width={1344}
+              height={700}
             />
           </a>
           <div className="mt-4">
@@ -60,8 +62,9 @@ const GearUp = () => {
             <Image
               alt="ecommerce"
               className="object-contain object-center w-full h-full block"
-              src="Image (7).png"
+              src="/Image (7).png"
               width={1344}
+              height={700}
             />
           </a>
           <div className="mt-4">
@@ -81,8 +84,9 @@ const GearUp = () => {
             <Image
               alt="ecommerce"
               className="object-contain object-center w-full h-full block"
-              src="Image (8).png"
+              src="/Image (8).png"
               width={1344}
+              height={700}
             />
           </a>
           <div className="mt-4">

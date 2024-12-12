@@ -12,7 +12,7 @@ const Feature = () => {
     <Image
       className=" object-cover object-center rounded"
       alt="hero"
-      src="Image (4).png"
+      src="/Image (4).png"
       width={1344}
       height={700}
     />
