@@ -1,9 +1,10 @@
 import React from "react"
 import Image from "next/image";
+import Link from "next/link";
 
 export default function TopHeader() {
     return (
-      <header className="bg-white border-b border-gray-300 px-4 md:px-8 py-2">
+      <header className="bg-slate-100 border-b border-gray-300 px-4 md:px-8 py-2">
         <div className="container mx-auto flex items-center justify-between">
                 {/* top header logo */}
           <div className="flex items-center">
@@ -18,12 +19,12 @@ export default function TopHeader() {
   
           {/* top header Skip to main content */}
           <div className="hidden sm:block">
-            <a
-              href="/Home"
+            <Link
+              href="/"
               className="text-xs md:text-sm  text-black hover:text-gray-800 focus:text-gray-800"
-            >
+              >
               Skip to main content
-            </a>
+              </Link>
           </div>
   
           {/* top header  Links */}
@@ -36,7 +37,7 @@ export default function TopHeader() {
             </a>
             <span className="hidden sm:block">|</span>
             <a
-              href="/JoinUs"
+              href="/GetHelp"
               className="hover:text-gray-800 focus:text-gray-800 transition"
             >
               Help

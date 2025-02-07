@@ -1,112 +1,70 @@
+'use client'
 import Image from 'next/image'
-import React from 'react'
+import Link from 'next/link'
+import React, { useEffect, useState } from 'react'
+import { Product } from '../../../types/products'
+import { client } from '@/sanity/lib/client'
+import {  threeProducts } from '@/sanity/lib/queries'
+import { urlFor } from '@/sanity/lib/image'
 
 
 const GearUp = () => {
-  return (
+   const[product , setProduct]= useState<Product[]>([])
     
-      <div>
-        
-     
-    <div className="container px-5 py-24 mx-auto">
-      <div className="flex flex-wrap -m-4">
-
-
-        <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
-          <a className="block relative h-48 rounded overflow-hidden">
-            <Image
-              alt="ecommerce"
-              className="object-contain object-center w-full h-full block "
-              src="/Image (5).png"
-              width={1344}
-              height={700}
-            />
-          </a>
-          <div className="mt-4">
-          <h2 className="text-gray-900 title-font text-lg font-medium">
-            Nike Dri-FIT ADV TechKnit Ultra
-            </h2>
-            <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
-            Men&apos;s Short-Sleeve Running Top
-            </h3>
-            <p className="mt-1">$16.00</p>
-          </div>
-        </div>
-
-
-        <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
-          <a className="block relative h-48 rounded overflow-hidden">
-            <Image
-              alt="ecommerce"
-              className="object-contain object-center w-full h-full block"
-              src="/Image (6).png"
-              width={1344}
-              height={700}
-            />
-          </a>
-          <div className="mt-4">
-          <h2 className="text-gray-900 title-font text-lg font-medium">
-            Nike Dri-FIT Challenger
-            </h2>
-            <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
-            Men&apos;s 18cm (approx.) 2-in-1 Versatile Shorts
-            </h3>
-           <p className="mt-1">$21.15</p>
-          </div>
-        </div>
-
-    
+      useEffect(()=>{
+        async  function fetchproduct(){
+              const fetchedProduct:Product[] = await client.fetch(threeProducts)
+              setProduct(fetchedProduct)
+          }
+          fetchproduct()
+      },[])
   
-        <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
-          <a className="block relative h-48 rounded overflow-hidden">
-            <Image
-              alt="ecommerce"
-              className="object-contain object-center w-full h-full block"
-              src="/Image (7).png"
-              width={1344}
-              height={700}
-            />
-          </a>
-          <div className="mt-4">
-          <h2 className="text-gray-900 title-font text-lg font-medium">
-            Nike Dri-FIT ADV Run Division
-            </h2>
-            <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
-            Women&apos;s Long-Sleeve Running Top
-            </h3>
-            <p className="mt-1">$12.00</p>
-          </div>
-        </div>
-
-
-        <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
-          <a className="block relative h-48 rounded overflow-hidden">
-            <Image
-              alt="ecommerce"
-              className="object-contain object-center w-full h-full block"
-              src="/Image (8).png"
-              width={1344}
-              height={700}
-            />
-          </a>
-          <div className="mt-4">
-          <h2 className="text-gray-900 title-font text-lg font-medium">
-            Nike Fast
-            </h2>
-            <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
-            Women&apos;s Mid-Rise 7/8 Running Leggings with Pockets
-            </h3>
-            
-            <p className="mt-1">$12.00</p>
-          </div>
-        </div>
-    </div>      
-
+  return (
+    <div>
+<section className="text-gray-600 body-font mt-11">
+  <div className="container px-4 py-24 mx-auto w-full">
+    <div className="flex justify-between mb-4 items-center m-8">
+      <h2 className="ml-2 text-3xl text-black">Gear up </h2>
+      
     </div>
-
+    
+    <div className="flex flex-wrap justify-between gap-2">
+      {product.map((product) => (
+        <div key={product._id} className="lg:w-1/4 md:w-1/3 sm:w-1/2 p-4">
+          <Link href={`/product/${product._id}`} className="block relative h-50 rounded overflow-hidden">
+            {product.image && (
+              <Image
+                alt="ecommerce"
+                className="object-cover object-center h-full block"
+                src={urlFor(product.image).url()}
+                width={1344}
+                height={500}
+              />
+            )}
+          </Link>
+          <div className="mt-4">
+            <h2 className="text-gray-900 title-font text-lg font-medium">
+              {product.productName}
+            </h2>
+            <p className="mt-1">price: ${product.price}</p>
+            <Link href={`/product/${product._id}`}>
+                  <button className="bg-black text-white  mt-4 py-2 ml-0 px-4 rounded-md hover:bg-green-600 transition"
+                
+                  >
+                    product detail
+                  </button>
+                  </Link>
+           
+          </div>
+        </div>
+      ))}
+    </div>
   </div>
+</section>
+</div>
     
   )
 }
 
 export default GearUp
+

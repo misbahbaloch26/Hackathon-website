@@ -1,14 +1,15 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 const Feature = () => {
   return (
     <div>
         <section className="text-gray-600 body-font">
-      <div className='font-bold h-[17]  container mx-auto flex px-5 mt-9  flex-col'>
-      <h1 className='text-black '>Featured</h1>
+      <div className=' h-[17]  container mx-auto flex px-5 mt-9  flex-col'>
+      <h1 className='text-black text-4xl mb-4 '>Featured</h1>
       </div>
-  <div className=" container mx-auto flex px-5  py-[15px] items-center justify-center flex-col">
+  <div className=" container mx-auto flex px-5 mt-9 py-[15px] items-center justify-center flex-col">
     <Image
       className=" object-cover object-center rounded"
       alt="hero"
@@ -24,10 +25,11 @@ const Feature = () => {
       Cause everyone should know the feeling of running in that perfect pair.
       </p>
       <div className="flex justify-center">
-        
+        <Link href={'/ProductList'}>
         <button className="ml-4 inline-flex  text-white bg-black border-0 py-2 px-6 focus:outline-none hover:bg-blue-400 rounded-xl text-lg">
         Find Your Shoe
         </button>
+        </Link>
       </div>
     </div>
   </div>

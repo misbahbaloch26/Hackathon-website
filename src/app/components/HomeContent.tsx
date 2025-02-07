@@ -1,8 +1,14 @@
-import React from 'react'
+'use client'
+import React, { useEffect, useState } from 'react'
 import { HiOutlineArrowSmLeft, HiOutlineArrowSmRight } from 'react-icons/hi'
 import HelloNike from './HelloNike'
 import Feature from './Feature'
 import Image from 'next/image'
+import {  threeProducts } from '@/sanity/lib/queries'
+import { Product } from '../../../types/products'
+import { client } from '@/sanity/lib/client'
+import Link from 'next/link'
+import { urlFor } from '@/sanity/lib/image'
 
 
 
@@ -13,13 +19,13 @@ const HomeContent = () => {
       <HelloNike/>     {/*3 header only on home page*/}
 
                       {/*hero section*/}
-       <section className="text-gray-600 body-font">
-  <div className="container mx-auto flex pt-2 px-4  items-center justify-center flex-col w-full">
+       <section className="text-gray-600 body-font ">
+  <div className="container mx-auto flex px-4  items-center justify-center flex-col w-full">
     
-<Image src="/Image.png" alt=""  width={1344} height={700}/>    {/*background image*/}
+<Image src="/Image.png" alt="background-image"  width={1344} height={700}/>    {/*background image*/}
 
-    <div className="text-center lg:w-2/3 w-full">   {/* */}
-      <h1 className="title-font sm:text-4xl text-3xl  pt-5 mb-4 font-medium text-gray-900">
+    <div className="text-center lg:w-2/3 w-full mt-11 ">   {/* */}
+      <h1 className="title-font sm:text-4xl text-3xl  pt-5 mb-5 font-medium text-gray-900">
       Nike Air Max Pulse
       </h1>
       <p className="mb-8 leading-relaxed">
@@ -51,96 +57,72 @@ const HomeContent = () => {
 
                            {/*home page - best of Air Max */}
 export const BestProducts = () => {
+
+
+  const[product , setProduct]= useState<Product[]>([])
+  
+    useEffect(()=>{
+      async  function fetchproduct(){
+            const fetchedProduct:Product[] = await client.fetch(threeProducts)
+            setProduct(fetchedProduct)
+        }
+        fetchproduct()
+    },[])
+
+
   return (
-    <div>
-      <section className="text-gray-600 body-font">
-
-      <div className="flex items-center justify-between px-4 mx-11 gap-4">
-    <h3 className=" text-lg font-semibold pl-11 ">Best of Air Max</h3>
-    <div className="flex items-center gap-2">
-        <p className=" text-sm cursor-pointer hover:underline">shop</p>
-        <HiOutlineArrowSmLeft  />
-        <HiOutlineArrowSmRight  />
+  
+<div>
+<section className="text-gray-600 body-font mt-11">
+  <div className="container px-4 py-24 mx-auto w-full">
+    <div className="flex justify-between mb-4 items-center m-8">
+      <h2 className="ml-2 text-3xl text-black">Best of Air Max</h2>
+      <div className="flex items-center gap-4 ">
+        <p className="text-black">Shop</p>
+        <div className="bg-[#F5F5F5] px-5 py-4 rounded-full cursor-pointer">
+          <HiOutlineArrowSmLeft />
+        </div>
+        <div className="bg-[#E5E5E5] px-5 py-4 rounded-full cursor-pointer">
+          <HiOutlineArrowSmRight />
+        </div>
+      </div>
     </div>
-</div>
-       
-      
-
-  <div className="container px-4 py-24 mx-auto bg-slate-100 w-full">
     
-    <div className="flex flex-wrap -m-4 justify-center items-center  ">
-      <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
-
-      
-
-        <a className="block relative h-48 rounded overflow-hidden">
-          <Image
-            alt="ecommerce"
-            className="object-cover object-center w-full h-full block"
-            src="/Image (1).png"
-            width={1344}
-            height={500}
-          />
-        </a>
-        <div className="mt-4">
-          <h3 className="text-black text-xs tracking-widest title-font mb-1">
-            Nike Air Max Pulse
-          </h3>
-          <h2 className="text-gray-900 title-font text-lg font-medium">
-            Women Shoe&apos;s
-          </h2>
-          <p className="mt-1">$13.995</p>
+    <div className="flex flex-wrap justify-between gap-2">
+      {product.map((product) => (
+        <div key={product._id} className="lg:w-1/4 md:w-1/3 sm:w-1/2 p-4">
+          <Link href={`/product/${product._id}`} className="block relative h-50 rounded overflow-hidden">
+            {product.image && (
+              <Image
+                alt="ecommerce"
+                className="object-cover object-center h-full block"
+                src={urlFor(product.image).url()}
+                width={1344}
+                height={500}
+              />
+            )}
+          </Link>
+          <div className="mt-4">
+            <h2 className="text-gray-900 title-font text-lg font-medium">
+              {product.productName}
+            </h2>
+            <p className="mt-1">price: ${product.price}</p>
+            <Link href={`/product/${product._id}`}>
+                  <button className="bg-black text-white  mt-4 py-2 ml-0 px-4 rounded-md hover:bg-green-600 transition"
+                
+                  >
+                    product detail
+                  </button>
+                  </Link>
+           
+          </div>
         </div>
-      </div>
-     
-      <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
-        <a className="block relative h-48 rounded overflow-hidden">
-          <Image
-            alt="ecommerce"
-            className="object-cover object-center w-full h-full block"
-            src="/Image (2).png"
-            width={441}
-            height={500}
-          />
-        </a>
-        <div className="mt-4">
-          <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
-          Nike Air Max Pulse
-          </h3>
-          <h2 className="text-gray-900 title-font text-lg font-medium">
-          Men Shoe&apos;s
-          </h2>
-          <p className="mt-1">$13.995</p>
-        </div>
-      </div>
-      <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
-        <a className="block relative h-48 rounded overflow-hidden">
-          <Image
-            alt="ecommerce"
-            className="object-cover object-center w-full h-full block"
-            src="/Image (3).png"
-            width={1344}
-            height={500}
-          />
-        </a>
-        <div className="mt-4">
-          <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
-          Nike Air Max 97 SE
-          </h3>
-          <h2 className="text-gray-900 title-font text-lg font-medium">
-            Men&apos;s Shoe
-          </h2>
-          <p className="mt-1">$16.995</p>
-        </div>
-      </div>
-     
-     
+      ))}
     </div>
   </div>
 </section>
+</div>
 
-    </div>
-   
   )
 }
  {/*feature section's code is in feature.tsx component */}
@@ -148,5 +130,13 @@ export const BestProducts = () => {
 
 
 
+
+
+
+
+
+
+
+   
 
 

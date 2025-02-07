@@ -5,7 +5,7 @@ const ByeBye = () => {
     <div>
         <footer className="text-black body-font bg-white">
   <div className="container px-5 py-24 mx-auto">
-    <div className="flex flex-wrap md:text-left text-center -mb-10 -mx-4">
+    <div className="flex flex-wrap justify-evenly md:text-left text-center -mb-10 -mx-4">
       <div className="lg:w-1/6 md:w-1/2 w-full px-4">
         <h2 className="title-font font-medium text-black tracking-widest text-sm mb-3">
          Icons

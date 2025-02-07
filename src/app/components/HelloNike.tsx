@@ -2,8 +2,8 @@ import React from "react"
 
 const HelloNike = () => {
   return (
-    <div>
-        <div className="flex justify-center align-middle text-center text-black font-bold font-[Helvetica Neue]">
+    <div className="bg-slate-100">
+        <div className=" flex justify-center align-middle text-center text-black font-bold font-[Helvetica Neue]">
     <h3>Hello Nike App</h3>
    </div>
    <div className="flex justify-center align-middle text-center text-black ">
